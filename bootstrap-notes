@@ -1,0 +1,25 @@
+dropdown-menu-left + dropdown-menu-right
+.navbar-default .navbar-brand {
+    line-height: 60px/padding:30px 0(Only Top+Bottom);
+}
+.navbar-default .navbar-nav > li > a {
+    line-height: 60px/padding:30px 0(Only Top+Bottom);
+}
+Bootstrap ships with 4 tiers of grids, which have class prefixes of;
+
+.col-xs- , (<768px)
+
+.col-sm- , (≥768px)
+
+.col-md- , (≥992px)
+
+.col-lg- , (≥1200px)
+
+If you've applied a column class of "col-xs-6" what you are saying is that from 0px to 767px i want this column to be 50% of the containers width. And unless you add another class for the next grid tier, it will continue to be 50% of the parent on wider screens as well. So not only up to 768px but beyond unless you add another class.
+
+Your problem here is that most mobiles are simply too narrow to show two columns for this purpose. So change "col-xs-6" to "col-xs-12". And add "col-sm-6" as well.
+
+<div class="col-xs-12 col-sm-6">
+That will mean that from 768px and up, the columns wil be 50%.
+
+The reason why the layout looks broken though is probably because your input's have a width or min-width that is greater than the 50% width of the container and are therefore wider than the column grid they are nested in.
