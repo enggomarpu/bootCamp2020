@@ -31,6 +31,6 @@ jobs:
       run: npm install -g surge 
     
     - name: Run Surge
-      run: surge ./ enggomarpu.surge.sh ${{secrets.SURGE.TOKEN}}
+      run: surge ./ enggomarpu.surge.sh --token ${{secrets.SURGE.TOKEN}}
     
     
