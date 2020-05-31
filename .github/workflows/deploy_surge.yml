@@ -28,7 +28,7 @@ jobs:
         node-version: 12
           
     - name: Install Surge
-      run: npm install -g surge 
+      run: npm install --global surge
     
     - name: Run Surge
       run: surge ./ http://enggomarpu.surge.sh --token ${{secrets.SURGE.TOKEN}}
