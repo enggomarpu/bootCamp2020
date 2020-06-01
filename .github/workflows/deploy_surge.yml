@@ -32,14 +32,14 @@ jobs:
     # - name: create basic app  
     #   run:  create-react-app react-basic
     # - name: move to directory
-    #   run:  cd react-basic
+        run:  npm install 
     #   run:  npm run build
 
     - name: Install Surge
       run: npm install --global surge
 
     - name: Run Surge
-      run: surge ./react-basic/build enggomarpu.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      run: surge ./ enggomarpu.surge.sh --token ${{secrets.SURGE_TOKEN}}
     
  
     
