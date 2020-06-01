@@ -31,16 +31,18 @@ jobs:
     #   run : npm install -g create-react-app 
     # - name: create basic app  
     #   run:  create-react-app react-basic
-    - name: move to directory
+    - name: install react and dependencies 
       run:  npm install 
+    - name: build the project
+      run:  npm run build
     #   run:  npm run build
 
     - name: Install Surge
       run: npm install --global surge
 
     - name: Run Surge
-      run: surge ./ enggomarpu.surge.sh --token ${{secrets.SURGE_TOKEN}}
-           npm run deploy
+      run: surge /path/to/project/build enggomarpu.surge.sh --token ${{secrets.SURGE_TOKEN}}
+ 
     
  
     
