@@ -26,14 +26,15 @@ jobs:
       uses: actions/setup-node@v2-beta 
       with: 
         node-version: 12.0.0
-        
+
     - name: install create-react 
       run : npm install -g create-react-app 
     - name: create basic app  
       run:  create-react-app react-basic
     - name: move to directory
       run:  cd react-basic
-  
+      run:  npm run build
+      
     - name: Install Surge
       run: npm install --global surge
 
