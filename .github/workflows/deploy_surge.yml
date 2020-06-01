@@ -27,6 +27,9 @@ jobs:
       with: 
         node-version: 12
 
+    - name: Install React
+      uses: npx create-react-app react-base-app
+            
     - name: Install Surge
       run: npm install --global surge
     
