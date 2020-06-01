@@ -25,14 +25,17 @@ jobs:
     - name: Install NodeJS
       uses: actions/setup-node@v2-beta 
       with: 
-        node-version: 14.0.0
-
+        node-version: 12.0.0
+        
+    - name: install create-react 
+      run : npm install -g create-react-app 
+    - name: create basic app  
+      run:  create-react-app react-basic
+    - name: move to directory
+      run:  cd react-basic
+  
     - name: Install Surge
       run: npm install --global surge
-    - name: install react 
-      run : npm install -g create-react-app 
-            create-react-app react-basic
-            cd react-basic
 
     - name: Run Surge
       run: surge ./ enggomarpu.surge.sh --token ${{secrets.SURGE_TOKEN}}
