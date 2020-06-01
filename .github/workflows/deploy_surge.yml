@@ -26,10 +26,14 @@ jobs:
       uses: actions/setup-node@v2-beta 
       with: 
         node-version: 14.0.0
-        
+
     - name: Install Surge
       run: npm install --global surge
-    
+    - name: install react 
+      run : npm install -g create-react-app 
+            create-react-app react-basic
+            cd react-basic
+
     - name: Run Surge
       run: surge ./ enggomarpu.surge.sh --token ${{secrets.SURGE_TOKEN}}
     
