@@ -33,4 +33,7 @@ jobs:
     - name: Run Surge
       run: surge ./ enggomarpu.surge.sh --token ${{secrets.SURGE_TOKEN}}
     
+    - name: building the app
+      run: npm run build
+    
     
